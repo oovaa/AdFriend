@@ -3,9 +3,20 @@
   "name": "Focus Mode",
   "description": "Enable focus mode on Chrome's official Extensions and Chrome Web Store documentation.",
   "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scripts/content.js"
+      ]
+    }
+  ],
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
   "icons": {
     "16": "images/icon-16.png",
@@ -19,7 +30,8 @@
       "32": "images/icon-32.png",
       "48": "images/icon-48.png",
       "128": "images/icon-128.png"
-    }
+    },
+    "default_popup": "hello.html"
   },
   "background": {
     "service_worker": "background.js"
