@@ -1,6 +1,6 @@
 {
-  "dependencies": {
-    "@types/chrome": "^0.0.301",
-    "chrome-types": "^0.1.337"
-  }
+  "name": "adfriend-extension",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module"
 }

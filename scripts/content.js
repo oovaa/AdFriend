@@ -1,25 +1,35 @@
-// scripts/content.js
+// // scripts/content.js
 
-// Function to replace the content of all heading tags
-function replaceHeaders() {
-  // Select all heading tags (h1, h2, h3, h4, h5, h6)
-  const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+// // List of common ad-related CSS selectors
+// const adSelectors = [
+//   "[id^='ad_']", // IDs starting with "ad_"
+//   "[class*='ad']", // Classes containing "ad"
+//   "[class*='banner']", // Banner ads
+//   "iframe[src*='ads']", // Iframes with "ads" in src
+//   'div[data-advertising]', // Custom ad attributes
+//   'ins.adsbygoogle', // Google Ads
+// ]
+// // Function to find and remove ads
+// function removeAds() {
+//   adSelectors.forEach((selector) => {
+//     document.querySelectorAll(selector).forEach((ad) => {
+//       ad.replaceWith(createCustomWidget()) // Replace ad with custom content
+//     })
+//   })
+// }
 
-  headers.forEach((header) => {
-    // Replace the content of each header
-    // Store the original content in a data attribute if it hasn't been stored already
-    if (!header.dataset.originalText) {
-      header.dataset.originalText = header.textContent
-    }
-    header.textContent = `Replaced: ${header.tagName} (Original: ${header.dataset.originalText})`
-  })
+// // Function to create a motivational widget
+// function createCustomWidget() {
+//   const widget = document.createElement('div')
+//   widget.style.cssText =
+//     'padding: 10px; background: #f4f4f4; border: 1px solid #ddd;'
+//   widget.innerHTML = `<h4>✨ Stay Motivated! ✨</h4><p>Keep pushing forward! 💪</p>`
+//   return widget
+// }
 
-  console.log(`Replaced ${headers.length} headers.`)
-}
+// // Run when the DOM is fully loaded
+// document.addEventListener('DOMContentLoaded', removeAds)
 
-// Run the function when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', replaceHeaders)
-
-// Use MutationObserver to handle dynamically added headers
-const observer = new MutationObserver(replaceHeaders)
-observer.observe(document.body, { childList: true, subtree: true })
+// // Use MutationObserver to track new ads
+// const observer = new MutationObserver(removeAds)
+// observer.observe(document.body, { childList: true, subtree: true })
