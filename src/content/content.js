@@ -62,7 +62,8 @@ function createWidget(type) {
 
   // Add refresh functionality
   widget.querySelector('.adfriend-refresh').addEventListener('click', () => {
-    widget.querySelector('p').textContent = getRandomContent(type.slice(0, -1)) + ' 🖤'
+    widget.querySelector('p').textContent =
+      ' 🖤' + getRandomContent(type.slice(0, -1))
   })
 
   return widget
